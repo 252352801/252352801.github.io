@@ -28,11 +28,14 @@
   <main>
     <div class="content content--fixed">
       <div id="page" class="page" style="background-color: rgba(85, 85, 85, 0);">
+        <div class="banner">
+          <img src="./assets/images/banner.jpg"/>
+        </div>
         <div id="card" class="card">
           <header class="fade in">
             <img src="./assets/images/avatar.jpg" width="80" height="80">
             <h1 data-translate="name" class="title">GandalfWei</h1>
-            <h2 data-translate="title"  style="color: rgb(102, 102, 102);">前端低级攻城狮。</h2>
+            <h2 data-translate="title">前端低级攻城狮。</h2>
           </header>
           <ul class="fade in">
             <li id="link-blog">
@@ -57,6 +60,7 @@
               <a title="WeChat" href="./assets/images/wechatxl.png">
                 <i class="fa fa-weixin"></i>
                 <img class="wechat-img" src="./assets/images/wechatxl.png" height="95" width="95" alt="wechat">
+                <span data-translate="WeChat">微信</span>
               </a>
             </li>
             <li id="link-github" class="quarter">
@@ -66,9 +70,9 @@
               </a>
             </li>
             <li id="link-stack-overflow" class="quarter">
-              <a  target="_blank">
+              <a target="_blank">
                 <i class="fa fa-stack-overflow"></i>
-                <span data-translate="stack-overflow">知乎</span>
+                <span data-translate="stack-overflow">ace.js</span>
               </a>
             </li>
             <li id="link-more" class="quarter">
@@ -85,5 +89,35 @@
     </div>
   </main>
 </body>
+<script>
+  (function () {
+    function resize() {
+      var card = document.getElementById('card') || document.getElementById('card_xs');
+      if (card) {
+        var client_w = document.body.clientWidth;
+        if (client_w <= 550) {
+          card.id = 'card_xs';
+        } else {
+          card.id = 'card';
+        }
+      }
+    }
+    resize();
+    var resize_timer = null;
+    var page = document.getElementById('page');
+    window.addEventListener('resize', function () {
+      page.style.display = 'none';
+      clearTimeout(resize_timer);
+      resize_timer = setTimeout(function () {
+        console.log(1);
+        setTimeout(function () {
+          page.style.display = 'flex';
+          resize();
+        }, 300);
+      },500);
+    });
+  })();
+
+</script>
 
 </html>
