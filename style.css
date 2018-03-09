@@ -67,6 +67,10 @@ header h2{
     color:#353535;
     display: none;
 }
+.coding{
+    padding-bottom: 10px;
+    font-family: inherit;
+}
 @media (max-width: 550px){
     #card{
         width: 100%;
@@ -142,8 +146,7 @@ header h2{
         background-image: none;
         background-color: #fafafa;
     }
-}
-.coding{
-    padding-bottom: 10px;
-    font-family: inherit;
+    .coding{
+       display: none!important;
+    }
 }
